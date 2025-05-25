@@ -165,7 +165,7 @@ function ContactUs() {
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm">Email</p>
-                      <p className="text-lg font-semibold text-white">helpsasolutions@gmail.com</p>
+                      <p className="text-lg font-semibold text-white">services.sasolutions@gmail.com</p>
                     </div>
                   </motion.div>
 

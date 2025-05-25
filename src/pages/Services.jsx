@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import '../styles/Services.css';
 import ServicePopup from '../components/ServicePopup';
 import Carousel from '../components/ui/carousel';

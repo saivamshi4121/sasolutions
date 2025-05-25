@@ -14,7 +14,6 @@ import digitalMarketingImg from '../assets/digital marketing.jpg';
 import cloudServicesImg from '../assets/cloud services.jpg';
 import collaborationImg from '../assets/collabration opportunites.jpg';
 import guidanceImg from '../assets/growth guidance.jpg';
-import thumbnailDesignImg from '../assets/thumbnail design.jpg';
 
 function Works() {
   const [selectedCategory, setSelectedCategory] = useState('all');
