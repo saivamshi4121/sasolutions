@@ -69,7 +69,7 @@ const teamMembers = [
     role: 'Client Acquisition',
     image: gayathriImage,
     row: 3,
-    linkedin: 'https://www.linkedin.com/in/sumani-bollipogu-32b362338/'
+    linkedin: 'https://www.linkedin.com/in/goni-gayathri-363892353/'
   }
 ];
 
@@ -130,20 +130,20 @@ function Team() {
         </div>
 
         {/* Content */}
-        <div className="relative pt-24 pb-16 px-4">
+        <div className="relative pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 px-4">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="text-center relative mb-16"
+              className="text-center relative mb-8 sm:mb-12 md:mb-16"
             >
               <motion.h1
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="text-5xl md:text-6xl font-bold mb-4"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 px-4"
               >
                 <span className="bg-gradient-to-r from-white via-primary to-accent bg-clip-text text-transparent">
                   Meet Our Team
@@ -153,20 +153,20 @@ function Team() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg text-gray-400 max-w-2xl mx-auto"
+                className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4 leading-relaxed"
               >
                 A collective of passionate individuals driving innovation and excellence
               </motion.p>
             </motion.div>
 
             {/* Team Grid */}
-            <div className="space-y-16">
+            <div className="space-y-8 md:space-y-16">
               {/* Row 1 - 2 cards centered */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="grid grid-cols-2 gap-8 max-w-2xl mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 max-w-2xl mx-auto px-4 sm:px-0"
               >
                 {row1Members.map((member) => (
                   <TeamMemberCard key={member.id} member={member} setHoveredMember={setHoveredMember} />
@@ -178,7 +178,7 @@ function Team() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="grid grid-cols-3 gap-8 max-w-4xl mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 max-w-4xl mx-auto px-4 sm:px-0"
               >
                 {row2Members.map((member) => (
                   <TeamMemberCard key={member.id} member={member} setHoveredMember={setHoveredMember} />
@@ -190,7 +190,7 @@ function Team() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="grid grid-cols-2 gap-8 max-w-2xl mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 max-w-2xl mx-auto px-4 sm:px-0"
               >
                 {row3Members.map((member) => (
                   <TeamMemberCard key={member.id} member={member} setHoveredMember={setHoveredMember} />
@@ -203,7 +203,7 @@ function Team() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative mt-24 overflow-hidden"
+              className="relative mt-12 md:mt-24 mx-4 sm:mx-auto overflow-hidden"
             >
               <motion.div
                 animate={{
@@ -217,12 +217,12 @@ function Team() {
                 }}
                 className="absolute inset-0 bg-gradient-conic from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-3xl"
               />
-              <div className="relative bg-dark/60 backdrop-blur-xl p-16 rounded-3xl border border-primary/10">
+              <div className="relative bg-dark/60 backdrop-blur-xl p-6 md:p-16 rounded-3xl border border-primary/10">
                 <motion.h3
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8 }}
-                  className="text-4xl md:text-5xl font-bold text-white mb-6"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6 text-center"
                 >
                   Join Our Team
                 </motion.h3>
@@ -230,22 +230,24 @@ function Team() {
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto"
+                  className="text-lg sm:text-xl text-gray-400 mb-8 md:mb-12 max-w-3xl mx-auto text-center px-4"
                 >
                   We're always looking for talented individuals to join our innovative team. Explore our current opportunities.
                 </motion.p>
-                <motion.a
-                  href="/careers"
-                  className="inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-primary to-accent text-dark font-semibold rounded-xl transition-all duration-500 transform perspective-1000"
-                  whileHover={{
-                    scale: 1.05,
-                    rotateX: 10,
-                    boxShadow: "0 30px 40px rgba(var(--primary-rgb), 0.4)"
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="text-lg">View Open Positions</span>
-                </motion.a>
+                <div className="text-center">
+                  <motion.a
+                    href="/careers"
+                    className="inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-primary to-accent text-dark font-semibold rounded-xl transition-all duration-500 transform perspective-1000"
+                    whileHover={{
+                      scale: 1.05,
+                      rotateX: 10,
+                      boxShadow: "0 30px 40px rgba(var(--primary-rgb), 0.4)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="text-base sm:text-lg">View Open Positions</span>
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -289,7 +291,7 @@ const TeamMemberCard = ({ member, setHoveredMember }) => {
       }}
     >
       <motion.div
-        className="relative aspect-square w-48 mx-auto overflow-hidden rounded-full bg-dark/40 backdrop-blur-xl border border-primary/10 transition-all duration-500"
+        className="relative aspect-square w-32 sm:w-40 md:w-48 mx-auto overflow-hidden rounded-full bg-dark/40 backdrop-blur-xl border border-primary/10 transition-all duration-500"
         animate={{
           scale: isHovered ? 1.05 : 1,
           rotateY: isHovered ? 10 : 0,
@@ -352,10 +354,10 @@ const TeamMemberCard = ({ member, setHoveredMember }) => {
             }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            <div className="inline-flex items-center justify-center w-10 h-10 bg-[#0077b5] text-white rounded-full hover:bg-[#0077b5]/80 transition-colors">
+            <div className="inline-flex items-center justify-center w-8 sm:w-10 h-8 sm:h-10 bg-[#0077b5] text-white rounded-full hover:bg-[#0077b5]/80 transition-colors">
               <LinkedInIcon />
             </div>
-            <span className="text-white text-sm">View Profile</span>
+            <span className="text-white text-xs sm:text-sm">View Profile</span>
           </motion.div>
         </motion.div>
 
@@ -382,18 +384,18 @@ const TeamMemberCard = ({ member, setHoveredMember }) => {
       </motion.div>
 
       {/* Name and Role Below Circle */}
-      <div className="mt-4 text-center">
+      <div className="mt-3 sm:mt-4 text-center">
         <motion.h3
-          className="text-lg font-bold text-white"
+          className="text-base sm:text-lg font-bold text-white px-2"
           layout
         >
           {member.name}
         </motion.h3>
         <motion.div
-          className="mt-1"
+          className="mt-1 sm:mt-2"
           layout
         >
-          <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+          <span className="px-2 sm:px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full inline-block">
             {member.role}
           </span>
         </motion.div>
