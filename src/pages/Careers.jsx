@@ -406,7 +406,7 @@ function Careers() {
                           </p>
                           <div className="mt-4">
                             <motion.a
-                              href="https://forms.gle/wqxTN5QuTdUAKmpq5"
+                              href="https://forms.gle/EZTrYUDyr4FUbokS8"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-primary to-accent text-dark font-semibold rounded-xl transition-all duration-500 transform perspective-1000"
@@ -491,7 +491,7 @@ function Careers() {
                   We're always looking for exceptional talent to join our team. Share your resume, and let's explore future opportunities together.
                 </motion.p>
                 <motion.a
-                  href="https://forms.gle/wqxTN5QuTdUAKmpq5"
+                  href="https://forms.gle/EZTrYUDyr4FUbokS8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-primary to-accent text-dark font-semibold rounded-xl transition-all duration-500 transform perspective-1000"
