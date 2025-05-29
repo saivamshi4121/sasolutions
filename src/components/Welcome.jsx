@@ -12,28 +12,30 @@ function Welcome() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [sparkles, setSparkles] = useState([]);
 
+  const addSparkle = (x, y) => {
+    const sparkle = {
+      id: Date.now(),
+      x,
+      y,
+      size: Math.random() * 20 + 10
+    };
+    setSparkles(prev => [...prev, sparkle]);
+    setTimeout(() => {
+      setSparkles(prev => prev.filter(s => s.id !== sparkle.id));
+    }, 1000);
+  };
+
   useEffect(() => {
+    // Increased welcome screen duration from 4.5s to 8s
     const timer = setTimeout(() => {
       setShowWelcome(false);
       document.body.style.overflow = 'auto';
-    }, 4500);
+    }, 8000);
 
     const handleMouseMove = (e) => {
-      const newPosition = { x: e.clientX, y: e.clientY };
-      setMousePosition(newPosition);
-
-      // Create sparkle effect on mouse move
-      if (Math.random() > 0.8) {
-        const newSparkle = {
-          id: Date.now(),
-          x: e.clientX,
-          y: e.clientY,
-          size: Math.random() * 10 + 5
-        };
-        setSparkles(prev => [...prev, newSparkle]);
-        setTimeout(() => {
-          setSparkles(prev => prev.filter(s => s.id !== newSparkle.id));
-        }, 1000);
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      if (Math.random() > 0.85) {
+        addSparkle(e.clientX, e.clientY);
       }
     };
 

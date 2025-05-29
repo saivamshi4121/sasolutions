@@ -96,110 +96,153 @@ function ContactUs() {
         keywords="contact sa solutions, digital agency contact, marketing agency contact hyderabad, web development contact"
         schema={schema}
       />
-      <div className="min-h-screen bg-gradient-to-br from-dark via-dark/95 to-dark py-24 px-4 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-dark via-dark/95 to-dark py-32 px-4 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-[500px] h-[500px] top-0 -left-48 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute w-[500px] h-[500px] bottom-0 -right-48 bg-accent/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute inset-0 bg-[url('/src/assets/grid.jpg')] opacity-20 mix-blend-overlay" />
+          <motion.div 
+            className="absolute w-[500px] h-[500px] top-0 -left-48 bg-primary/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div 
+            className="absolute w-[500px] h-[500px] bottom-0 -right-48 bg-accent/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <div className="absolute inset-0 bg-[url('/src/assets/grid.jpg')] opacity-10 mix-blend-overlay" />
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-4 px-6 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent"
+              className="inline-block mb-6 px-6 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent"
             >
               Let's Connect
             </motion.div>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-primary to-accent bg-clip-text text-transparent mb-4">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-primary to-accent bg-clip-text text-transparent mb-6"
+            >
               Get in Touch
-            </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-xl text-gray-400 max-w-2xl mx-auto"
+            >
               Have a project in mind? We'd love to discuss how we can help bring your ideas to life.
-            </p>
-          </motion.div>        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Contact Information Card */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-dark/40 backdrop-blur-md p-8 rounded-2xl text-white relative overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-300"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-dark/40 backdrop-blur-xl p-10 rounded-2xl text-white relative overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-300 h-full"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"
+                animate={{
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
               <div className="relative z-10">
-                <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Contact Information</h2>
-                <div className="space-y-8">
+                <h2 className="text-3xl font-bold mb-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-center">Contact Information</h2>
+                <div className="space-y-8 max-w-md mx-auto">
                   <motion.div 
-                    className="flex items-center space-x-4"
+                    className="group flex items-center gap-6"
                     whileHover={{ x: 4 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <div className="bg-accent/10 p-4 rounded-xl">
+                    <div className="bg-accent/10 p-4 rounded-xl group-hover:bg-accent/20 transition-colors duration-300">
                       <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Phone</p>
-                      <p className="text-lg font-semibold text-white">+91 6304105912</p>
-                    </div>
+                    <a href="tel:+916301874132" className="text-lg font-semibold text-white hover:text-accent transition-colors">
+                    +91 6301874132
+                    </a>
                   </motion.div>
 
                   <motion.div 
-                    className="flex items-center space-x-4"
+                    className="group flex items-center gap-6"
                     whileHover={{ x: 4 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <div className="bg-primary/10 p-4 rounded-xl">
+                    <div className="bg-primary/10 p-4 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
                       <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Email</p>
-                      <p className="text-lg font-semibold text-white">services.sasolutions@gmail.com</p>
-                    </div>
+                    <a href="mailto:services.sasolutions@gmail.com" className="text-lg font-semibold text-white hover:text-primary transition-colors">
+                      services.sasolutions@gmail.com
+                    </a>
                   </motion.div>
 
                   <motion.div 
-                    className="flex items-center space-x-4"
+                    className="group flex items-center gap-6"
                     whileHover={{ x: 4 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <div className="bg-secondary/10 p-4 rounded-xl">
+                    <div className="bg-secondary/10 p-4 rounded-xl group-hover:bg-secondary/20 transition-colors duration-300">
                       <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Location</p>
-                      <p className="text-lg font-semibold text-white">Hyderabad, India</p>
-                    </div>
+                    <p className="text-lg font-semibold text-white">
+                      Hyderabad, India
+                    </p>
                   </motion.div>
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-primary/10">
-                  <h3 className="text-xl font-semibold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Connect With Us</h3>
-                  <div className="flex space-x-4">
+                  <h3 className="text-xl font-semibold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent text-center">Connect With Us</h3>
+                  <div className="flex justify-center gap-6">
                     {[
                       { 
                         icon: FaInstagram, 
                         href: 'https://www.instagram.com/sasolutions.offical?igsh=NW55djB2NXB1MHNl', 
-                        label: 'Instagram' 
+                        label: 'Instagram',
+                        hoverColor: 'hover:text-pink-500'
                       },
                       { 
                         icon: FaLinkedinIn, 
                         href: 'https://www.linkedin.com/company/sa-solutions-pvt/', 
-                        label: 'LinkedIn' 
+                        label: 'LinkedIn',
+                        hoverColor: 'hover:text-blue-500'
                       }
                     ].map((social, index) => (
                       <motion.a
@@ -207,8 +250,8 @@ function ContactUs() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-dark/40 p-4 rounded-xl hover:bg-accent/10 hover:text-accent transition-all duration-300 group"
-                        whileHover={{ y: -4 }}
+                        className={`bg-dark/40 p-4 rounded-xl hover:bg-accent/10 transition-all duration-300 group ${social.hoverColor}`}
+                        whileHover={{ y: -4, scale: 1.05 }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -226,13 +269,18 @@ function ContactUs() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-dark/40 backdrop-blur-md p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-dark/40 backdrop-blur-xl p-10 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300 h-full"
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-400">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <motion.div 
+                    className="space-y-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                       Your Name
                     </label>
                     <input
@@ -241,12 +289,17 @@ function ContactUs() {
                       name="name"
                       value={formData.user_name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-300"
+                      className="w-full px-4 py-3.5 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                       required
                     />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-400">
+                  </motion.div>
+                  <motion.div 
+                    className="space-y-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                       Email Address
                     </label>
                     <input
@@ -255,14 +308,19 @@ function ContactUs() {
                       name="email"
                       value={formData.user_email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-300"
+                      className="w-full px-4 py-3.5 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                       required
                     />
-                  </div>
+                  </motion.div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-400">
+                <motion.div 
+                  className="space-y-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
                     Phone Number
                   </label>
                   <input
@@ -271,12 +329,17 @@ function ContactUs() {
                     name="phone"
                     value={formData.user_phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-300"
+                    className="w-full px-4 py-3.5 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                   />
-                </div>
+                </motion.div>
 
-                <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-400">
+                <motion.div 
+                  className="space-y-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300">
                     Your Message
                   </label>
                   <textarea
@@ -285,14 +348,17 @@ function ContactUs() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-300"
+                    className="w-full px-4 py-3.5 rounded-xl border border-primary/20 bg-dark/60 text-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
                     required
                   ></textarea>
-                </div>
+                </motion.div>
 
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(var(--accent-rgb), 0.3)" }}
                   whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
                   disabled={isSubmitting}
                   type="submit"
                   className={`w-full py-4 px-6 rounded-xl font-semibold text-dark transition-all duration-300
@@ -307,6 +373,8 @@ function ContactUs() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
                     className={`p-4 rounded-xl ${
                       status.type === 'success' 
                         ? 'bg-green-500/10 text-green-500 border border-green-500/20' 

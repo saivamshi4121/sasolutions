@@ -76,92 +76,54 @@ function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             className="relative aspect-square lg:aspect-auto lg:h-[600px] flex items-center justify-center"
-          >            {/* Animated Logo Container with Enhanced Effects */}
+          >
+            {/* Logo Container with Professional Animation */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               className="w-96 h-96 flex items-center justify-center relative"
             >
-              {/* Glowing ring effect */}
-              <motion.div
-                className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-r from-primary/30 via-accent/20 to-secondary/30"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180],
-                  opacity: [0.3, 0.5, 0.3],
+              {/* Subtle Glow Effect */}
+              <div 
+                className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10"
+                style={{ 
+                  filter: "blur(40px)",
+                  transform: "translateZ(0)",
                 }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                style={{ filter: "blur(20px)" }}
               />
 
-              {/* Main Logo with enhanced animation */}
+              {/* Main Logo with Professional Animation */}
               <motion.img
                 src={require('../assets/final logo.png')}
                 alt="SA Solutions Logo"
                 className="w-80 h-80 object-contain relative z-10"
-                initial={{ scale: 0, opacity: 0, rotateY: 180 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ 
-                  scale: 1,
                   opacity: 1,
-                  rotateY: 0,
-                  y: [-10, 10, -10],
+                  y: 0,
                 }}
-                transition={{
-                  y: {
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  },
-                  default: {
-                    duration: 1.5,
-                    ease: "easeOut"
-                  }
+                transition={{ 
+                  duration: 1,
+                  ease: "easeOut"
                 }}
                 whileHover={{
-                  scale: 1.1,
-                  rotateY: 180,
-                  transition: { 
-                    duration: 0.8,
-                    ease: "easeInOut"
-                  }
+                  scale: 1.02,
+                  transition: { duration: 0.3 }
                 }}
               />
 
-              {/* Spinning particles effect */}
-              {[...Array(3)].map((_, index) => (
-                <motion.div
-                  key={index}
-                  className="absolute w-full h-full"
-                  initial={{ rotate: (index * 120) }}
-                  animate={{ rotate: [index * 120, index * 120 + 360] }}
-                  transition={{
-                    duration: 10 + index * 2,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  <motion.div
-                    className="w-4 h-4 bg-accent/30 rounded-full absolute"
-                    style={{ 
-                      top: "10%",
-                      left: "50%",
-                      filter: "blur(8px)"
-                    }}
-                    animate={{
-                      opacity: [0.5, 1, 0.5],
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                </motion.div>              ))}
+              {/* Subtle Float Animation Container */}
+              <motion.div
+                className="absolute inset-0 z-0"
+                animate={{ 
+                  y: [-5, 5, -5],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
             </motion.div>
           </motion.div>
         </div>

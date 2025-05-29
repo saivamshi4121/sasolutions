@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 function AboutUs() {
+  const [sparkles, setSparkles] = useState([]);
+
+  const addSparkle = (x, y) => {
+    const sparkle = {
+      id: Date.now(),
+      x,
+      y,
+      size: Math.random() * 20 + 10
+    };
+    setSparkles(prev => [...prev, sparkle]);
+    setTimeout(() => {
+      setSparkles(prev => prev.filter(s => s.id !== sparkle.id));
+    }, 1000);
+  };
+
+  const handleMouseMove = (e) => {
+    if (Math.random() > 0.85) {
+      addSparkle(e.clientX, e.clientY);
+    }
+  };
+
   const stats = [
     { number: '20+', label: 'Brand Partners', icon: '🤝' },
     { number: '95%', label: 'Client Satisfaction', icon: '⭐' },
@@ -18,7 +39,28 @@ function AboutUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black" onMouseMove={handleMouseMove}>
+      {/* Sparkles */}
+      {sparkles.map(sparkle => (
+        <motion.div
+          key={sparkle.id}
+          initial={{ opacity: 1, scale: 0 }}
+          animate={{ opacity: 0, scale: 1 }}
+          transition={{ duration: 1 }}
+          style={{
+            position: 'fixed',
+            top: sparkle.y,
+            left: sparkle.x,
+            width: sparkle.size,
+            height: sparkle.size,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle at center, #FFD700, transparent)',
+            pointerEvents: 'none',
+            zIndex: 1000,
+          }}
+        />
+      ))}
+
       {/* Hero Section with Parallax */}
       <section className="relative h-[90vh] overflow-hidden flex items-center">
         <div className="absolute inset-0">

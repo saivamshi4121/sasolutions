@@ -6,6 +6,8 @@ import Services from '../pages/Services';
 import Works from '../pages/Works';
 import Blog from '../pages/Blog';
 import ContactUs from '../pages/ContactUs';
+import Careers from '../pages/Careers';
+import Team from '../pages/Team';
 import NotFound from '../pages/NotFound';
 
 const AppRoutes = () => {
@@ -17,6 +19,8 @@ const AppRoutes = () => {
       <Route path="/works" element={<Works />} />
       <Route path="/blog/*" element={<Blog />} />
       <Route path="/contact" element={<ContactUs />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/team" element={<Team />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

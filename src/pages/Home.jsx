@@ -28,7 +28,7 @@ function Home() {
     "logo": "https://yourdomain.com/logo512.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-6304105912",
+      "telephone": "+91 6301874132",
       "contactType": "customer service",
       "email": "helpsasolutions@gmail.com"
     },
