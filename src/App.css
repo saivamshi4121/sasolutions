@@ -1,0 +1,156 @@
+:root {
+  --primary-rgb: 99, 102, 241;
+  --secondary-rgb: 248, 113, 113;
+  --accent-rgb: 244, 183, 63;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced Book Card Animation */
+.book {
+  position: relative;
+  border-radius: 15px;
+  width: 100%;
+  height: 450px;
+  background-color: whitesmoke;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+  transform: preserve-3d;
+  perspective: 2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.book:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 55%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: shine 8s infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.book:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.4);
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: 0;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.book:hover .cover {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotatey(-80deg);
+  box-shadow: -10px 10px 30px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Animation */
+.book:hover p {
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+/* Shine Animation */
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Additional Hover Effects */
+.book::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--primary-rgb), 0.3),
+    rgba(var(--accent-rgb), 0.3)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.book:hover::after {
+  opacity: 1;
+}
